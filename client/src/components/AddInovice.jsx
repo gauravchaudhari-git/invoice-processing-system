@@ -24,7 +24,7 @@ const defaultObj = {
   action: 'pending',
 };
 
-const AddInvoice = () => {
+const AddInvoice = ({ setAddInvoice }) => {
   const [invoice, setInvoice] = useState(defaultObj);
 
   // Handle Input Changes
@@ -38,6 +38,7 @@ const AddInvoice = () => {
       ...invoice, 
       amount: Number(invoice.amount) // Ensure amount is a number 
     };
+    setAddInvoice(false);
 
     try {
       const response = await saveInvoice(invoiceData); // Save to API

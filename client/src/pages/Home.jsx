@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import { Box, Typography, Button } from '@mui/material';
 import AddInvoice from '../components/AddInovice';
+import Invoices from '../components/Invoices';
 
 const Home = () => {
   const [addInvoice, setAddInvoice] = useState(false);
@@ -30,6 +31,9 @@ const Home = () => {
           {addInvoice ? 'Close Form' : 'Add Invoices'} {/* Dynamic button text */}
         </Button>
         {addInvoice && <AddInvoice />} {/* Conditionally render AddInvoice */}
+        <Box>
+          < Invoices/>
+        </Box>
       </Box>
     </React.Fragment>
   );
